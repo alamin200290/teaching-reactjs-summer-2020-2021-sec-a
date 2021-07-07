@@ -38,6 +38,20 @@ setTimeout(function(){
 }, 1000);*/
 
 
+/*const f2 = function(f1){
+	let sum =10;
+	setTimeout(()=>{
+		f1(sum);
+	}, 3000);
+	console.log('this is f2 func ...');
+}
+
+
+f2(function(sum){
+	console.log(`the value is: ${sum}`)
+});*/
+
+
 /*const p = new Promise((resolve, reject)=>{
 	let sum = 10;
 
@@ -57,17 +71,16 @@ p.then(msg=>{
 }).catch(error=>{
 	console.log(error);
 });
-console.log('test');*/
-
+console.log('test');
+*/
 
 /*function sum(a, b){
-
 	return new Promise((resolve, reject)=>{
 		if(a !== 0 && b !== 0){
 			setTimeout(()=>{
 				let sum = a+b;
 				resolve(sum);
-			}, 5000);
+			}, 3000);
 		}else{
 			reject(0);
 		}
@@ -83,21 +96,38 @@ console.log('test');*/
 });*/
 
 
-/*
-async function mytask (a, b){
-
+/*async function mytask (a, b){
 	let total = await sum(a,b);
-	return total;
+	console.log(`Total value is: ${total}`);
 }
 
-const abc = mytask(0,40).then(msg=>{
-	console.log(msg);
-}).catch(error=>{
-	console.log(error);
-});
-*/
+mytask(10,20);
+console.log('this is another task...')*/
 
-import {student} from './student';
+/*function sum2(a, b){
+	if(a !== 0 && b !== 0){
+		setTimeout(()=>{
+			let sum = a+b;
+			return sum;
+		}, 3000);
+	}else{
+		return 'error';
+	}
+}
+
+async function mytask2(a,b){
+	let total = await sum2(a,b);
+	setTimeout(()=>{
+		console.log(`total value is: ${total}`);
+	}, 4000);
+}
+
+mytask2(30,40);
+console.log('this is another task...');*/
+
+
+import {Student, id} from './Student';
+import Student from './Student';
 
 const s1 = new Student('alamin', 'alamin@aiub.edu', 'CSE');
 console.log(s1.getName());

@@ -1,4 +1,4 @@
-exports class Student{
+exports default class Student{
 
 	constructor(name, email, dept){
 		this.name = name;
@@ -10,3 +10,9 @@ exports class Student{
 		return this.name;
 	}
 }
+
+/*exports const id =10;
+
+const f1 = ()=>{
+	console.log('this is a function...');
+}*/
