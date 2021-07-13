@@ -1,6 +1,7 @@
 
 export default function Index(title, content){
-	return `<html>
+	return(
+		`<html>
 			<head>
 				<title>${title}</title>
 				<link rel='stylesheet' href='style.css'/>
@@ -8,5 +9,6 @@ export default function Index(title, content){
 			<body>
 				<div>${content}</div>
 			</body>
-		</html>`;
+		</html>`
+	);
 }
