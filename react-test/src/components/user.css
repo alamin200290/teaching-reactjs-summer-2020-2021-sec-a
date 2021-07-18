@@ -1,0 +1,20 @@
+.std{
+   border: 1px solid black;
+   width: 150px;
+   height: 90px;
+   background-color: aqua;
+   color: crimson;
+   border-radius: 2px;
+   margin: 5px;
+   padding: 5px;
+}
+h3{
+   margin: 0em;
+}
+p{
+   margin: 0em;
+}
+button{
+   margin-right: 5px;
+   margin-top: 5px;
+}
