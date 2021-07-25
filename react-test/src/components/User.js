@@ -1,5 +1,5 @@
 import './user.css';
-import {Link} from 'react-router-dom';
+import {Link} from "react-router-dom";
 
 const User = ({id, name, dept, callback})=>{
     return (
