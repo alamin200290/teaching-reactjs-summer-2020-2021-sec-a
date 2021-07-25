@@ -1,6 +1,6 @@
 import User from './User';
 
-const UserList = ({list})=>{
+const UserList = ({list, deleteCallback})=>{
    
     return (
         
@@ -8,7 +8,7 @@ const UserList = ({list})=>{
             <h1>All User List</h1>
             {
                 list.map((u)=>{
-                   return  <User key={u.id} {...u} />
+                   return  <User key={u.id} {...u} callback={deleteCallback}/>
                 })
             }
         </div>
@@ -16,4 +16,3 @@ const UserList = ({list})=>{
 }
 
 export default UserList;
-

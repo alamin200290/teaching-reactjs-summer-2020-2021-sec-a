@@ -1,17 +1,19 @@
 import UserList from './components/UserList';
+import {users} from './usersData';
+import {useState} from 'react';
 
 function App() {
 
-  const users =[ 
-    {id: 1, name: 'alamin', dept: 'SE'},
-    {id: 2, name: 'xyz', dept: 'CSE'},
-    {id: 3, name: 'abc', dept: 'CIS'},
-    {id: 4, name: 'prq', dept: 'CS'},
-  ];
+ const [userlist, setUserList] = useState(users);
+
+  const deleteuser = (id)=>{
+    const list = userlist.filter((user)=>user.id !== id);
+    setUserList(list);
+  }
 
   return (
     <div>
-        <UserList list={users} />
+        <UserList list={userlist} deleteCallback={deleteuser}/>
     </div>
   );
 }
