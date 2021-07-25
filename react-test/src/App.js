@@ -1,12 +1,13 @@
 import UserList from './components/UserList';
 import {users} from './usersData';
 import {useState} from 'react';
+import CreateUser from './components/CreateUser';
+import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
 
  const [userlist, setUserList] = useState(users);
-
   const deleteuser = (id)=>{
     const list = userlist.filter((user)=>user.id !== id);
     setUserList(list);
@@ -15,11 +16,18 @@ function App() {
   return (
    
     <Router>
+      <Navbar/>
       <Switch>
-          <Route exect path='/'>
+          <Route exact path='/'> 
+              <h1>Welcome Home!</h1>
+          </Route>
+          <Route path='/userlist'>
             <div>
                 <UserList list={userlist} deleteCallback={deleteuser}/>
             </div>
+          </Route>
+          <Route path='/create'>
+              <CreateUser/>
           </Route>
           <Route path='/edit/' children={<h1>Edit form</h1>}></Route>
           <Route path='*'>

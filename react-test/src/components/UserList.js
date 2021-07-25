@@ -3,7 +3,6 @@ import User from './User';
 const UserList = ({list, deleteCallback})=>{
    
     return (
-        
         <div>
             <h1>All User List</h1>
             {
