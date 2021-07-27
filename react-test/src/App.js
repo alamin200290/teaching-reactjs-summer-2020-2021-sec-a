@@ -27,9 +27,9 @@ function App() {
             </div>
           </Route>
           <Route path='/create'>
-              <CreateUser/>
+              <CreateUser status='add' />
           </Route>
-          <Route path='/edit/' children={<h1>Edit form</h1>}></Route>
+          <Route path='/edit/:id' children={<CreateUser status='edit' />}></Route>
           <Route path='*'>
               404 not found
           </Route>          
