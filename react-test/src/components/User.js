@@ -1,12 +1,12 @@
 import './user.css';
 import {Link} from "react-router-dom";
 
-const User = ({id, name, dept, callback})=>{
+const User = ({id, userId, title, callback})=>{
     return (
         <div className= 'std'>
-            <h3>Name: {name}</h3>
+            <h3>Name: {userId}</h3>
             <p>Id: {id} </p> 
-            <p>Dept: {dept}</p>
+            <p>Dept: {title}</p>
             <button onClick={()=>callback(id)}>Delete</button>
             <Link to={`/edit/${id}`}> EDIT</Link>
         </div>

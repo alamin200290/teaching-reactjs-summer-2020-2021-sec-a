@@ -1,13 +1,27 @@
 import UserList from './components/UserList';
 import {users} from './usersData';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import CreateUser from './components/CreateUser';
 import Navbar from './components/Navbar';
+import { useFetch } from './components/useFetch';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
 
- const [userlist, setUserList] = useState(users);
+const url = `https://jsonplaceholder.typicode.com/posts`;
+
+  const [userlist, setUserList] = useState([]);
+  useFetch(url, setUserList);
+  // const getData = (url)=>{
+  //     return fetch(url)
+  //             .then(response=>response.json())
+  //             .then(json=>json);
+  // }
+
+  // useEffect(()=>{
+  //   getData(url).then(data=>setUserList(data));
+  // }, []);
+
   const deleteuser = (id)=>{
     const list = userlist.filter((user)=>user.id !== id);
     setUserList(list);
